@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body style="background: #fff;">
+ <div class="login">
+	<h1>body Performance</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="age" required="required" />
+        <input type="text" name="gender" placeholder="male = 0 female=1" required="required" />
+		<input type="text" name="height_cm" placeholder="height_cm" required="required" />
+        <input type="text" name="weight_kg" placeholder="weight_kg" required="required" />
+        <input type="text" name="body_fat_%" placeholder="body_fat_%" required="required" />
+        <input type="text" name="diastolic" placeholder="diastolic" required="required" />
+        <input type="text" name="systolic" placeholder="systolic" required="required" />
+        <input type="text" name="gripForce" placeholder="gripForce" required="required" />
+        <input type="text" name="sit_and_bend_forward_cm" placeholder="sit_and_bend_forward_cm" required="required" />
+        <input type="text" name="sit_ups_counts" placeholder="sit_ups_counts" required="required" />
+        <input type="text" name="broad_jump_cm	" placeholder="broad_jump_cm" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">body class </button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
